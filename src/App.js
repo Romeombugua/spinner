@@ -39,6 +39,7 @@ function App() {
 
   return (
     <div id="game-container">
+      <p> Contact me on Whatsapp: +254745187680</p>
       {isExploding && <ConfettiExplosion />}
       <div id="spinner-container">
         <div id="arrow"></div>
