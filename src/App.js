@@ -3,7 +3,7 @@ import './index.css';
 import Spinner from './Spinner';
 import ConfettiExplosion from 'react-confetti-explosion';
 
-const names = ['Alice', 'Bob', 'Charlie', 'David', 'Eva', 'Frank'];
+const names = ['Alice', 'Bob', 'Charlie', 'David', 'Eva', 'Frank', 'Grace', 'Hannah'];
 const predeterminedWinner = 'Bob';
 
 function App() {
@@ -39,7 +39,6 @@ function App() {
 
   return (
     <div id="game-container">
-      <p> Contact me on Whatsapp: +254745187680</p>
       {isExploding && <ConfettiExplosion />}
       <div id="spinner-container">
         <div id="arrow"></div>
