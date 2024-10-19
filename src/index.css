@@ -79,3 +79,47 @@ body {
 #spin-button:hover:enabled {
   background-color: #45a049;
 }
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.winner-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.modal-content button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}

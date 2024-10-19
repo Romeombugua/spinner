@@ -6,16 +6,33 @@ import ConfettiExplosion from 'react-confetti-explosion';
 const names = ['Alice', 'Bob', 'Charlie', 'David', 'Eva', 'Frank', 'Grace', 'Hannah'];
 const predeterminedWinner = 'Bob';
 
+const WinnerModal = ({ isOpen, onClose, winner }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="modal-overlay">
+      <div className="modal-content">
+        <h2>We Have a Winner!</h2>
+        <p>Congratulations to our lucky winner!</p>
+        <div className="winner-name">{winner}</div>
+        <p>Thank you for playing! Refresh page for new game</p>
+        <button onClick={onClose}>Close</button>
+      </div>
+    </div>
+  );
+};
+
 function App() {
   const [winner, setWinner] = useState('');
   const [rotation, setRotation] = useState(0);
   const [spinning, setSpinning] = useState(false);
   const [isExploding, setIsExploding] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     if (spinning) {
       setTimeout(() => {
-        alert(`The winner is: ${winner}! Refresh page for new game.`);
+        setIsModalOpen(true);
         setIsExploding(true); // Trigger confetti explosion
         setTimeout(() => setIsExploding(false), 3000); // Stop confetti after 3 seconds
         setSpinning(false);
@@ -37,6 +54,10 @@ function App() {
     setSpinning(true);
   };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div id="game-container">
       {isExploding && <ConfettiExplosion />}
@@ -47,6 +68,7 @@ function App() {
       <button id="spin-button" onClick={spin} disabled={spinning}>
         {spinning ? 'Good luck!' : 'Spin'}
       </button>
+      <WinnerModal isOpen={isModalOpen} onClose={closeModal} winner={winner} />
     </div>
   );
 }
