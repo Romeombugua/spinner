@@ -4,7 +4,7 @@ import Spinner from './Spinner';
 import ConfettiExplosion from 'react-confetti-explosion';
 
 const names = ['Alice', 'Bob', 'Charlie', 'David', 'Eva', 'Frank'];
-const predeterminedWinner = 'Alice';
+const predeterminedWinner = 'Bob';
 
 function App() {
   const [winner, setWinner] = useState('');
